@@ -1,6 +1,8 @@
 <template>
-  <Tasks v-if="isLoggedIn" />
-  <Login v-else @onLogIn="logIn" />
+  <main>
+    <Tasks v-if="isLoggedIn" />
+    <Login v-else @onLogIn="logIn" />
+  </main>
   <Footer />
 </template>
 
@@ -8,8 +10,6 @@
 import Footer from "./components/Footer.vue"
 import Tasks from "./views/Tasks.vue"
 import Login from "./views/Login.vue"
-
-import { useCookie } from 'vue-cookie-next'
 
 export default {
   name: "App",
