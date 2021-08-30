@@ -8,15 +8,22 @@ A simple task planner app built with Vue.js. Integrates with
 ## Installation
 
 ```bash
-npm install
+$ npm install
+```
+
+## Environment Variables
+
+```bash
+# task-planner-api URL
+VUE_APP_API_URL
 ```
 
 ## Running the app
 
 ```bash
 # Development
-npm run serve
+$ npm run serve
 
 # Production
-npm run build
+$ npm run build
 ```
