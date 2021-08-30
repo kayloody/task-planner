@@ -1,21 +1,22 @@
 # task-planner
 
-A simple task tracker app built with Vue.js, Nest.js and MongoDB.
+## Description
 
-## Project setup
+A simple task planner app built with Vue.js. Integrates with
+[task-planner-api](https://github.com/kayloody/task-planner-api)
 
-```
+## Installation
+
+```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Running the app
 
-```
+```bash
+# Development
 npm run serve
-```
 
-### Compiles and minifies for production
-
-```
+# Production
 npm run build
 ```
