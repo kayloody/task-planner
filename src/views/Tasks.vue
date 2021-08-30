@@ -10,7 +10,7 @@
     }"/>
   <button @click="addTask()">Add</button>
   <div v-for="(task, index) in tasks" :key="index">
-    <Task :name="task.name" :completed="task.completed"/>
+    <Task :name="task.name" :isCompleted="task.isCompleted"/>
   </div>
 </template>
 
@@ -32,13 +32,13 @@
         let taskField = document.getElementById("task-field");
         this.tasks = [{
           name: taskField.value,
-          completed: false
+          isCompleted: false
         }, ...this.tasks];
         taskField.value = "";
       }
     },
     created() {
-      this.tasks = [{name: "Wash car", completed: false},{name: "Wash car", completed: false},{name: "Wash car", completed: true}]
+      this.tasks = [{name: "Wash car", isCompleted: false},{name: "Wash car", isCompleted: false},{name: "Wash car", isCompleted: true}]
     }
   }
 </script>

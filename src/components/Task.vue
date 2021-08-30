@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="checkbox" v-model="completed" />
+        <input type="checkbox" v-model="isCompleted" />
         {{name}}
     </div>
 </template>
@@ -10,7 +10,7 @@
         name: "Task",
         props: {
             name: String,
-            completed: Boolean,
+            isCompleted: Boolean,
         }
     }
 </script>

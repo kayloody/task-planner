@@ -9,6 +9,8 @@ import Footer from "./components/Footer.vue"
 import Tasks from "./views/Tasks.vue"
 import Login from "./views/Login.vue"
 
+import { useCookie } from 'vue-cookie-next'
+
 export default {
   name: "App",
   components: {
@@ -24,7 +26,16 @@ export default {
   methods: {
     logIn(value) {
       this.isLoggedIn = value;
+      this.$cookie.setCookie(
+        "task-planner-cookie",
+        true, {
+          expire: '1d'
+        }
+      );
     }
+  },
+  created() {
+    this.isLoggedIn = this.$cookie.isCookieAvailable("task-planner-cookie");
   }
 }
 </script>
