@@ -4,7 +4,16 @@
     When do you want it?
   </label>
   <br>
-  <input type="password" id="password"/>
+  <input
+    type="password"
+    id="password"
+    @keydown="(e) => {
+      if (e.keyCode === 13) {
+        logIn();
+      } else {
+        this.logInMessage = '';
+      }
+    }"/>
   <button @click="logIn()">Log In</button>
   <p>{{logInMessage}}</p>
 </template>
@@ -20,11 +29,9 @@
     methods: {
       logIn() {
         if (document.getElementById("password").value === "NOW!") {
-          this.logInMessage = ""
           this.$emit('onLogIn', true);
         } else {
           this.logInMessage = "Incorrect Password"
-          this.$emit('onLogIn', false);
         }
       }
     }
