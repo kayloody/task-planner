@@ -15,6 +15,7 @@
             toggleState() {
                 this.$emit('onToggleState', this.id, this.isCompleted);
             }
-        }
+        },
+        emits: ["onToggleState"]
     }
 </script>

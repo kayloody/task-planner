@@ -1,5 +1,6 @@
 <template>
   <h1>Login</h1>
+  
   <label for="password">
     When do you want it?
   </label>
@@ -15,6 +16,7 @@
       }
     }"/>
   <button @click="logIn()">Log In</button>
+
   <p>{{logInMessage}}</p>
 </template>
 
