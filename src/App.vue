@@ -1,4 +1,5 @@
 <template>
+	<!-- Conditionally display view depending on login status -->
   <main>
     <Tasks v-if="isLoggedIn" />
     <Login v-else @onLogIn="logIn" />
@@ -19,12 +20,12 @@ export default {
     Login
   },
   data() {
-      return {
-        isLoggedIn: false
-      }
+		return {	// Initial login status
+			isLoggedIn: false
+		}
   },
   methods: {
-    logIn(value) {
+    logIn(value) {	// Update state and set cookie when successful log in
       this.isLoggedIn = value;
       this.$cookie.setCookie(
         "task-planner-cookie",
@@ -35,24 +36,28 @@ export default {
     }
   },
   created() {
+		/* On app creation, set log in status based on cookie
+		For persistent sessions */
     this.isLoggedIn = this.$cookie.isCookieAvailable("task-planner-cookie");
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+	/* Default styling from Vue */
+	#app {
+		font-family: Avenir, Helvetica, Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-align: center;
+		color: #2c3e50;
 
-  position: relative;
-  min-height: calc(100vh - 30px);
-}
+		position: relative;
+		min-height: calc(100vh - 30px);
+	}
 
-main {
-  padding-bottom: 25px;
-}
+	/* Padding for footer */
+	main {
+		padding-bottom: 25px;
+	}
 </style>
