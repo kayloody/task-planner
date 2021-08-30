@@ -1,3 +1,12 @@
 <template>
-  <h1>tasks</h1>
+  <h1>Tasks</h1>
 </template>
+
+<script>
+  export default {
+    name: 'Tasks',
+    components: {
+      
+    }
+  }
+</script>
