@@ -48,7 +48,7 @@
         this.errorMessage = `Failed to ${method}. Please refresh.`;
       },
       fetchTasks() {	// Get all tasks
-        this.axios.get(process.env.VUE_APP_API_URL)
+        this.axios.get(process.env.VUE_APP_API_URL + "/tasks")
           .then(res => this.tasks = res.data)
           .catch(() => this.errorHandler("fetch tasks"));
       },
@@ -62,7 +62,7 @@
           };
           
 					// Re-use fetchTasks to load all tasks
-          this.axios.post(process.env.VUE_APP_API_URL, newTask)
+          this.axios.post(process.env.VUE_APP_API_URL + "/tasks", newTask)
             .then(() => this.fetchTasks())
             .catch(() => this.errorHandler("create task"));
 
@@ -70,7 +70,7 @@
         }
       },
       updateTask(id, isCompleted) {	// Update a task (completed status)
-        this.axios.put(process.env.VUE_APP_API_URL + "/" + id, { isCompleted })
+        this.axios.put(process.env.VUE_APP_API_URL + "/tasks/" + id, { isCompleted })
           .catch(() => this.errorHandler("update task"));
       },
     },
